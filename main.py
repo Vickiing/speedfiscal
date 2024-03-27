@@ -59,4 +59,4 @@ def modifica_sped2():
             saida.write(linha_modificada)
     print('Modificação completada.')
 
-modifica_sped2()
+#modifica_sped2()
