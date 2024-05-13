@@ -4,13 +4,14 @@ import pandas as pd
 from concurrent.futures import ThreadPoolExecutor
 
 
-sped = r'C:\Users\vlsilva\Documents\PYTHON PROJETOS\python_fiscal\speedfiscal\SPED\EFD_1_46_010524_132948.TXT'
-
 dados = {
     'Loja': [],
     'Valor_ICMS': [],
     'Valor_FECP': []
 }
+
+
+
 
 def func_verificaST(arquivo_sped):
     
@@ -36,7 +37,7 @@ def func_verificaST(arquivo_sped):
     dados['Valor_FECP'].append(fecp)
 
 
-caminho_base = r'C:\Users\vlsilva\Documents\PYTHON PROJETOS\python_fiscal\speedfiscal\SPED'
+caminho_base = r'SPED/'
 arquivo = os.listdir(caminho_base)
 caminho_completo = [os.path.join(caminho_base, arquivo) for arquivo in arquivo]
 
@@ -47,6 +48,10 @@ def criar_df():
 
     df = pd.DataFrame(dados)
     return df
-dataframe = criar_df()
-dataframe.fillna(0, inplace=True)
-print(dataframe.sort_values(by='Loja'))
+
+def executar():
+    dataframe = criar_df()
+    dataframe.fillna(0, inplace=True)
+    print(dataframe.sort_values(by='Loja'))
+
+executar()

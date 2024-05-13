@@ -51,7 +51,7 @@ def modifica_sped():
             print('Modificação completada.')
 
             #print(f'Código: {bloco} - Nota: {nota} - Chave TXT: {valores[9]} - Chave Planilha: {chave_correspondente}')
-modifica_sped()
+#modifica_sped()
 
 
 

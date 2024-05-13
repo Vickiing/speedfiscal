@@ -2,7 +2,7 @@
 Criar classe Txt para referenciar arquivos do SPED Fiscal.
 Proposito: Testar a modificação no sped, diretamente por atributo da classe Txt.
 """
-arquivoTXT = r'C:\Users\vlsilva\Documents\PYTHON PROJETOS\fiscal\speedfiscal\teste\EFD_1_301_010224_173849 ret_nov.TXT'
+arquivoTXT = r'SPED\EFD_1_5_100524_145101.TXT'
 
 class Txt:
     def __init__(self, bloco=None):
@@ -20,11 +20,11 @@ class Txt:
                 if bloco == valores[1]:
                     self.bloco = valores[1]
                     linha_inteira = valores
-                    #print(f'BLOCO: {self.bloco} - LINHA COMPLETA: {linha_inteira}')
+                    print(f'BLOCO: {self.bloco} - LINHA COMPLETA: {linha_inteira}')
 
 
     def contar_linhas_bloco(self, bloco):
-    #precisa verificar se o resultado dessa função é consistente com o erro que o sped informo.
+    #precisa verificar se o resultado dessa função é consistente com o erro que o sped informou.
         self.bloco = bloco
         self.set_bloco(bloco)
         with open(arquivoTXT, 'r') as txt:
@@ -41,5 +41,6 @@ class Txt:
 
 
 efd = Txt()
-efd.contar_linhas_bloco('0000')
-print(efd.bloco)
+efd.contar_linhas_bloco('E110')
+#print(efd.bloco)
+print(efd.ler_txt('E110'))
